@@ -1,0 +1,337 @@
+<html>
+	<head>
+		<meta name="color-scheme" content="light dark">
+		<style type="text/css">
+			@keyframes shiny {
+			  0% {color: rgb(96,181,255);}
+			  50% {color: rgb(189,124,255);}
+			  100% {color: rgb(187,183,255);}
+			}
+
+
+			table {border-collapse:collapse;border-spacing:0;}
+			td{border-color:black;border-style:solid;border-width:1px; overflow:hidden;padding:3px 20px;word-break:normal;}
+			th{border-color:black;border-style:solid;border-width:1px; font-weight:normal;overflow:hidden;padding:3px 20px;word-break:normal;}
+
+
+			body { color: rgb(200,220,220); background-color: rgb(20,40,52); }
+			#text, #ptext {
+				display: block;
+				margin: auto;
+				font-size: 26px;
+				align-content: center;
+				width: 800px;
+				padding: 40px;
+				border-radius: 80px;
+			}
+			#text {
+				background-color: rgb(20,25,30);
+			}
+			#ptext {
+				margin-top: 30px;
+				background-color: rgb(30,60,80);
+			}
+			.true {
+				color: rgb(0,255,0);
+				font-weight: bold;
+			}
+
+		</style>
+	</head>
+	<body >
+		<div id="text">
+			<h2 style="text-align: center;">Apartment Replacements</h2>
+			<pre id="story" style="word-wrap: break-word; white-space: pre-wrap; ">
+	"Would you like some eggs too?" Marvin said, having just finished preparing his breakfast: a bacon and cheese omelette.
+
+	Lifting the view from her phone, Katherine looked at her roommate, who seemed to once again forget a crucial aspect of her. "Marv...", she said while going back to doom-scrolling on social media, "I already told you I don't eat eggs. Or anything animal."
+
+	"Right. Forgot about the vegan thing." said a slightly ashamed Marvin, now plating his creation. "Y'know Kath, I think I never asked", he mentions, "Do you do it as an honorary thing, or do you really not like meats and... everything else?"
+
+	"You <i>did</i> already ask me this, and I told you I don't like any meat. Or eggs", she replied to her friend, slightly annoyed, while still looking at her phone.  Ever since they started sharing the same college-oriented flat a week and a half ago, it'd been a constant fight between Marvin's poor memory and Katherine's laziness. "I guess I could eat regular cheese given that it's not that different from the stuff I buy. But if I'm already most of the way thru I might as well go all in". She went from sitting down on the couch to laying down on it, yawning. "Can you remind me why you wanted me to wake up so early? Or did you forget that too?"
+
+	"9 AM is not <i>‘so early'</i>, you couch potato" he said while chewing his breakfast. "Today the EuroCup starts, and I thought you would enjoy watching it with me. Like a bonding exercise between roommates, y'know?"
+
+	"Soccer, my favorite!", Kath replied with a sarcastic tone, "You really don't have anyone to invite over?"
+
+	"Hey, it's not my fault everyone's into basketball or baseball rather than this. I thought sports were sports, and that people were fine with watching anything, but apparently it's ‘too confusing'. Come on! How is extra time complicated in any way?" Marv complained, finishing his small meal.
+
+	"Maybe you're the complicated one", she said, laughing a little. She put her phone down on the floor next to the couch and closed her eyes, getting into a sleeping position, "I think I'll also skip this one."</pre>
+		</div>
+	<p style="text-align: center;">*the eurocup probably does not happen in the morning, but just imagine a timezone issue or something. sorry for the small amount of options! planned some more but didn't get around to it.</p>
+	<div id="ptext">
+			<h1 style="text-align: center;color: rgb(96,181,255); animation-name: shiny; animation-duration: 0.5s; animation-direction: both;animation-iteration-count: infinite;">CHANCE TIME!</h1>
+			<h3>Current Status:</h3>
+			<table><thead>
+				  <tr>
+				    <th>Name</th>
+				    <td><input type="text" id="c1name" value="Katherine"/></td>
+				    <td><input type="text" id="c2name" value="Marvin"/></td>
+				  </tr>
+					</thead>
+				<tbody>
+				   <tr>
+				    <th></th>
+				    <td><input type="text" id="c1nick" value="Kath"/></td>
+				    <td><input type="text" id="c2nick" value="Marv"/></td>
+				  </tr>
+				  <tr>
+				    <th>Pronouns</th>
+				    <td id="c1pro">she/her</td>
+				    <td id="c2pro">he/him</td>
+				  </tr>
+				  <tr>
+				    <th>Species</th>
+				    <td id="c1spe">Human</td>
+				    <td id="c2spe">Human</td>
+				  </tr>
+				  <tr>
+				    <th>Awareness</th>
+				    <td id="c1awa"><p class="true">True</p></td>
+				    <td id="c2awa"><p class="true">True</p></td>
+				  </tr>
+				  <tr>
+				    <th>Relationship</th>
+				    <td id="c3rel"><p>Roommates</p></td>
+				  </tr>
+				  <tr>
+				    <th>Entertainment</th>
+				    <td id="c3ent"><p>Soccer</p></td>
+				  </tr>
+				</tbody>
+				</table>
+			<button style="background-color: rgb(96,181,255); size: 20px; margin-top: 20px;" id="lucky">I'm feeling lucky.</button>
+			<p style="font-size: 18px; color: black">Wouldn't it be so exciting to hit this friendly couple with a bit of random reality magic?? Type some names and nicks, and watch the fun happen!</p>
+		</div>
+	<script type="text/javascript">
+		const pronouns = [	["she", "her"],
+							["he", "him"],
+							["they", "their"],
+							["mmph", "mmphr"],
+							["rawr", "raewr"],
+							["hir", "hir"],
+							["it", "its"],
+							["fae", "faeir"]
+						];
+
+		var chars = [
+			{	
+				name: ["Katherine", "Kath"],
+				pronouns: ["she", "her"],
+				species: "Human",
+				aware: true
+			},
+			{	
+				name: ["Marvin", "Marv"],
+				pronouns: ["he", "him"],
+				species: "Human",
+				aware: true
+			},
+			{
+				relation: "Roommates",
+				entertainment: "Soccer"
+			}
+		]
+
+		function ChangeText(text, elem){
+				elem.forEach((i) =>  {
+					i.textContent = `${text}`;
+			    });
+				
+			}
+
+		function UpdateText(num ){
+			//gotta improve this past the "do it quickly to test it" phase lol
+			let story;
+			let storydiv = document.querySelector("#story"); 
+			switch(num){
+				case 0:
+					story = document.querySelectorAll("#st0");
+					break;
+				case 1:
+					story = document.querySelectorAll("#st1");
+					break;
+				case 2:
+					story = document.querySelectorAll("#st2");
+					break;
+				case 3:
+					story = document.querySelectorAll("#st3");
+					break;
+			}
+			storydiv.innerHTML = story[0].innerHTML;
+
+			ChangeText(chars[0].name[0], document.querySelectorAll(".name1"));
+			ChangeText(chars[0].name[1], document.querySelectorAll(".nick1"));
+
+			ChangeText(chars[1].name[0], document.querySelectorAll(".name2"));
+			ChangeText(chars[1].name[1], document.querySelectorAll(".nick2"));
+
+			ChangeText(chars[0].pronouns[0], document.querySelectorAll(".pr11a"));
+			//uppercase
+			ChangeText(chars[0].pronouns[0].charAt(0).toUpperCase() + chars[0].pronouns[0].slice(1), document.querySelectorAll(".pr11b"));
+			ChangeText(chars[0].pronouns[1], document.querySelectorAll(".pr12"));
+
+			ChangeText(chars[1].pronouns[0], document.querySelectorAll(".pr21"));
+			ChangeText(chars[1].pronouns[1], document.querySelectorAll(".pr22"));
+
+			ChangeText(chars[0].pronouns[0]+"/"+chars[0].pronouns[1], document.querySelectorAll("#c1pro"));
+			ChangeText(chars[1].pronouns[0]+"/"+chars[1].pronouns[1], document.querySelectorAll("#c2pro"));
+
+			ChangeText(chars[0].species, document.querySelectorAll("#c1spe"));
+			ChangeText(chars[1].species, document.querySelectorAll("#c2spe"));
+
+			let aware = chars[0].aware.toString();
+			ChangeText(aware.charAt(0).toUpperCase() + aware.slice(1), document.querySelectorAll("#c1awa"));
+			document.querySelector("#c1awa").className = aware;
+
+			aware = chars[1].aware.toString();
+			ChangeText(aware.charAt(0).toUpperCase() + aware.slice(1), document.querySelectorAll("#c2awa"));
+			document.querySelector("#c2awa").className = aware;
+
+			ChangeText(chars[2].relation, document.querySelectorAll("#c3rel"));
+			ChangeText(chars[2].entertainment, document.querySelectorAll("#c3ent"));
+		}
+
+		function UpdateStats(){
+			let rand = Math.floor(Math.random() * 4);
+
+			switch (rand) { //some constant values per scenario
+				case 0:
+					chars[0].species = chars[1].species = "Human";
+					chars[0].aware = chars[1].aware = true;
+					chars[2].relation = "Roommates";
+					chars[2].entertainment = "Soccer";
+					break;
+				case 1:
+					chars[0].species = "Inflatable";
+					chars[1].species = "Human";
+					chars[0].aware = true;
+					chars[1].aware = false;
+					chars[2].relation = "Lovers";
+					chars[2].entertainment = "Toyfucking";
+					break;
+				case 2:
+					chars[0].species = "Bovine";
+					chars[1].species = "Ghost";
+					chars[0].aware = chars[1].aware = false;
+					chars[2].relation = "Enemies";
+					chars[2].entertainment = "Mirror";
+					break;
+				case 3:
+					chars[0].species = chars[1].species = "Rubber Drone";
+					chars[0].aware = chars[1].aware = false;
+					chars[2].relation = "Coworkers";
+					chars[2].entertainment = "Rubberification";
+					break;
+				case 4:
+					chars[0].species = "Hippopotamus";
+					chars[1].species = "Dragon"; //very stressed
+					chars[0].aware = false;
+					chars[1].aware = true;
+					chars[2].relation = "Roommates";
+					chars[2].entertainment = "Skunk-o-vision"; 
+					break;
+				case 5:
+					chars[0].species = "Human"; //bimbo
+					chars[1].species = "Human";
+					chars[0].aware = false;
+					chars[1].aware = true;
+					chars[2].relation = "Lovers";
+					chars[2].entertainment = "Fashion show"; 
+					break;
+			}
+			let rand2 = Math.floor(Math.random() * 8);
+			chars[0].pronouns[0] = pronouns[rand2][0];
+			chars[0].pronouns[1] = pronouns[rand2][1];
+			rand2 = Math.floor(Math.random() * 8);
+			chars[1].pronouns[0] = pronouns[rand2][0];
+			chars[1].pronouns[1] = pronouns[rand2][1];
+
+			chars[0].name[0] = document.querySelector("#c1name").value;
+			chars[0].name[1] = document.querySelector("#c1nick").value;
+			chars[1].name[0] = document.querySelector("#c2name").value;
+			chars[1].name[1] = document.querySelector("#c2nick").value;
+			UpdateText(rand);
+		}
+
+		document.querySelector("#lucky").addEventListener("click", UpdateStats);
+
+	</script>
+	</body>
+<pre hidden id="st0">
+	"Would you like some eggs too?" <span class="name2"></span> said, having just finished preparing <span class="pr22"></span> breakfast: a bacon and cheese omelette.
+
+	Lifting the view from <span class="pr12"></span> phone, <span class="name1"></span> looked at <span class="pr12"></span> roommate, who seemed to once again forget a crucial aspect of <span class="pr12"></span>. "<span class="nick2"></span>...", <span class="pr11a"></span> said while going back to doom-scrolling on social media, "I already told you I don't eat eggs. Or anything animal.""
+
+	"Right. Forgot about the vegan thing." said a slightly ashamed <span class="name2"></span>, now plating <span class="pr22"></span> creation. "Y'know <span class="nick1"></span>, I think I never asked", <span class="pr21"></span> mentions, "Do you do it as an honorary thing, or do you really not like meats and... everything else?"
+
+	"You <i>did</i> already ask me this, and I told you I don't like any meat. Or eggs", <span class="pr11a"></span> replied to <span class="pr12"></span> friend, slightly annoyed, while still looking at <span class="pr12"></span> phone.  Ever since they started sharing the same college-oriented flat a week and a half ago, it'd been a constant fight between <span class="name2"></span>'s poor memory and <span class="name1"></span>'s laziness. "I guess I could eat regular cheese given that it's not that different from the stuff I buy. But if I'm already most of the way thru I might as well go all in". <span class="pr11b"></span> went from sitting down on the couch to laying down on it, yawning. "Can you remind me why you wanted me to wake up so early? Or did you forget that too?"
+
+	"9 AM is not <i>'so early'</i>, you couch potato" <span class="pr21"></span> said while chewing <span class="pr22"></span> breakfast. "Today marks the start of the EuroCup , and I thought maybe you would enjoy watching it with me. Like a bonding exercise between roommates, y'know?"
+
+	"Soccer, my favorite!", <span class="nick1"></span> replied with a sarcastic tone, "You really don't have anyone to invite over?"
+
+	"Hey, it's not my fault everyone's into basketball or baseball rather than this. I thought sports were sports, and that people were fine with watching anything, but apparently it's 'too confusing'. Come on! How is extra time complicated in any way?" <span class="nick2"></span> complained, finishing <span class="pr22"></span> small meal.
+
+	"Maybe you're the complicated one", <span class="pr11a"></span> said, laughing a little. <span class="pr11b"></span> put <span class="pr12"></span> phone down on the floor next to the couch and closed <span class="pr12"></span> eyes, getting into a sleeping position, "I think I'll also skip this one."
+</pre>
+
+<pre hidden id="st1">
+	"Would you like some eggs too?" <span class="name2"></span> said, having just finished preparing <span class="pr22"></span> breakfast: a bacon and cum omelette.
+
+	Stopping <span class="pr12"></span>self from tugging <span class="pr12"></span> face, <span class="name1"></span> looked at <span class="pr12"></span> partner, who seemed to once again forget a crucial aspect of <span class="pr12"></span>. "Mmpphh!!", <span class="pr11a"></span> said while going back to stretching <span class="pr12"></span> painted face, "Mppphmmhh!! Mmmmphhpphhmm mmmpphhmpmh!"
+
+	"Right. Forgot about the mouthless thing." said a slightly ashamed <span class="name2"></span>, now ejaculating onto <span class="pr22"></span> creation. "Y'know <span class="nick1"></span>, I think I never asked", <span class="pr21"></span> mentions, "Do you even eat anything, or do you just live off air?"
+
+	"Mmmpphhmmh!! Mmpphmmhpmhm mpphmh", <span class="pr11a"></span> replied to <span class="pr12"></span> lover, slightly annoyed, while still fighting <span class="pr12"></span> physiology. Ever since they started dating years ago, it'd been a constant struggle between <span class="name2"></span>'s human behaviour and <span class="name1"></span>'s ballooney nature. "Mmmmpphhhh mppphhhmm phhmm mhmhmpph phh!!!". <span class="pr11b"></span> flailed <span class="pr12"></span> useless inflated mittens in the air, trying to inform <span class="nick2"></span> of something <span class="pr21"></span> wasn't quite noticing.
+
+	"Huh, I guess that makes sense. You <i>are</i> a toy after all." <span class="pr21"></span> said while slurping <span class="pr22"></span> breakfast. "Hey, talking about that, the Toyfucking Championship is airing in an hour, and I thought you would enjoy watching it with me! To spend some intimate time together, y'know?"
+
+	"Mmmphh mpph mhphh!", <span class="nick1"></span> replied while applying force onto any part of <span class="pr12"></span> body <span class="pr11a"></span> could, somehow managing to open the valve on <span class="pr12"></span> belly, air starting to flow out.
+
+	"Yeah, I did ask the boys but they're not really into it. They're more fans of Milking, or Cocksucking, that kind of man stuff. I think one of them is like a Gooning pro. Y'know, the british sport?" <span class="nick2"></span> commented, gulping <span class="pr22"></span> sticky meal, somehow deaf to the loud "Pshhhhhhhh" that filled the room.
+
+	<span class="nick1"></span> fell to the floor, completely flat, closer to a rug than a beach toy at this point. <span class="name2"></span> finished <span class="pr12"></span> very milky breakfast and got up to clean <span class="pr22"></span> plate, completely oblivious to the fact <span class="pr22"></span> loved one was unable to produce any sound anymore.
+	<p style="font-size: 12px;">sorry to gush but on a personal note: the concept of partial awareness is so goddamn hot to me; the idea that for some reason <span class="nick2"></span> would have the fact <span class="pr21"></span>'s dating a pooltoy completely normalized, but can't tell <span class="pr11a"></span>'s struggling in utter panic, deflating, <span class="pr22"></span> being just like "oh i guess <span class="pr11a"></span>'s having a mood today!". in fact, it wouldn't only be <span class="nick2"></span>, but <i>the whole world</i>, unable to percieve <span class="nick1"></span>'s orgasmic cries</p>
+</pre>
+
+<pre hidden id="st2">
+	"Looks like someone is alone, hehe..." <span class="name2"></span> said, phasing thru the apartment's wall, completely invisible.
+
+	Lifting the view from <span class="pr12"></span> udder, <span class="name1"></span> looked at <span class="pr12"></span> creation. A mixer in front of <span class="pr12"></span> showcased a mix of different fruits, and now, raw milk. "What a better way to start the morning than with a good old homemade milkshake", <span class="pr11b"></span> said, adding sugar to the mix.
+
+	"Right. Forgot about the milk thing." said a grossed-out <span class="name2"></span>, now standing directly in front of <span class="pr22"></span> enemy. "Y'know <span class="nick1"></span>, I've heard somewhere...", <span class="pr21"></span> says to <span class="pr22"></span>self, grinning, with <span class="name1"></span> being unable to hear <span class="pr22"></span> "...that milkshakes contain a lot of fats."
+
+	"Down you go!", <span class="pr11a"></span> said to <span class="pr12"></span> breakfast drink, gulping it down, completely unaware of the intruder in not only <span class="pr12"></span> home, but soon <span class="pr12"></span> body. Ever since classes started months ago, it's been a constant race between the opposing fraternities to outdo eachoter's pranks. Last week, <span class="name1"></span> managed to soak their rival's newcomers during their ritual, apparently not realizing one of those was a bit too ethereal for <span class="pr12"></span> own luck.
+
+	As <span class="pr11a"></span> finished <span class="pr12"></span> nutritive mix, <span class="name2"></span> took advantage of the opportunity to go down the cow's throat alongisde the liquid breakfast. "Ahhhh, refreshing!" <span class="nick1"></span> said, now ready to start the day.
+
+	As <span class="pr11a"></span> headed towards <span class="pr12"></span> bedroom to change, <span class="pr11a"></span> passed by <span class="pr12"></span> bathroom, catching a glimpse of <span class="pr12"></span>self in the mirror, which sparked something in <span class="pr12"></span>. 
+
+	"Hey Cutie...", <span class="nick1"></span> said, getting horny, to <span class="pr12"></span> reflection, "I look kinda hot... reaaally hot...". Instinctively, <span class="pr11a"></span> started stroking <span class="pr12"></span> udder, oblivious to both the external influence on <span class="pr12"></span> mind and body, and the changed they were experiencing.
+
+	<span class="name1"></span>, being unable to stop stroking <span class="pr12"></span> growing udder, started leaking milk all over the floor, not only from <span class="pr12"></span> cow tits, but also from <span class="pr12"></span> mouth, nose and ears. "Aaaahhhh,,,,". <span class="pr11b"></span> was being completely filled with <span class="nick2"></span>'s ectoplasmic cum, draining <span class="pr12"></span> brain and expanding <span class="pr12"></span> skin to paranormal levels.
+
+	The mischievous spirit only left once the bovine condom had reached the size of the apartment they were in. Now, <span class="pr21"></span> could say <span class="pr11a"></span> would think twice before attacking their fraternity, if it wasn't for the fact that <span class="pr12"></span> thoughts were now just erotic plasma.
+</pre>
+
+<pre hidden id="st3">
+	"Would you like some dildo too?" <span class="name2"></span> said, opening a drawer full of plastic cocks of different sizes and taking out a big pink one.
+
+	Lifting the view from <span class="pr12"></span> massive bulge, <span class="name1"></span> looked at <span class="pr12"></span> coworker, who was already drooling over the sex toy it had in  <span class="pr22"></span> hand. "I'll pass...", <span class="pr11a"></span> said while focusing back on <span class="pr12"></span> null sphere, "I already have-ah... enough stimulation over here"
+
+	"Right. Forgot that they inflated your nullge." said a very horny <span class="name2"></span>, now engulfing the toy with <span class="pr22"></span> O-Shaped mouth. "Y'know <span class="nick1"></span>, I think I never asked", <span class="pr21"></span> mentions, "Did it hurt when they upped your bulge size? I've been thinking of getting an upgrade."
+
+	"Oh I don't think-ah... I could tell-ah... you how it felt-ah...", <span class="pr11a"></span> replied to <span class="pr12"></span> friend, panting severly, nearing the fifth hour of stroking the rubber ball without pause. Ever since they'd been transferred to work on the office a month ago, along most of their coworkers, it'd been a constant fix on getting the rubbing quota satisfied. "I don't think I could've-ah... told if a truck fell on... me at that moment-ah... I wouldn't even be able to tell right now! You should get the full size upgrade... Since you're already most of the way thru you might as well go all in". <span class="pr11b"></span> went from sitting down on the cafeteria's chair to laying down on the table, moaning. "Can you remind me why you-ah... wanted us to take the lunch break so early?..."
+
+	"They're airing a rubberization special in 20 minutes" <span class="nick2"></span> mentioned when turning the TV on, while completely lubricating <span class="pr22"></span> plastic meal. "They're going to show a new morphing substance, and I thought you would enjoy watching it. I know you love it when they completely reshape the victim with that gooey stuff. Well, I know I do!" <span class="pr21"></span> said, being just barely comprehensible with the dildo in <span class="pr22"></span> mouth.
+
+	"Oh fuck yeah....", <span class="nick1"></span> replied, getting ten times hornier, something <span class="pr11a"></span> didn't think was possible.
+
+	As both drones were nearing their impossible climax, text flashed on both the TV screen and their visors while a voice played thru the cafeteria's sound system "DRONES N-86024 AND N-86025, CODENAMES &lt<span class="name1"></span>&gt AND &lt<span class="name2"></span>&gt. REPORT IMMEDIATLY". They both, almost automatically, stopped what they were doing, going into a rigid saluting position, shouting "ALL HAIL THE LATEX LORD!".
+
+	"CONGRATULATIONS N-86024 AND N-86025", the voice said, very monotously, "IT SEEMS THE CONSTANT-STIMULI RELOCATION PROJECT HAS BEEN NOTHING BUT SUCCESSFUL. WE ARE DETECTING HIGH WORKLOADS EVEN DURING BREAK HOURS. AS A REWARD FOR YOUR LOYALTY, YOU WILL BE GIFTED-", an ascending synth arp played, similar to that of a casino slot machine. "...EJACULATION SENSATION!!! ENJOY YOUR PRIZE". Both visors started flashing the letters "C-U-M" while their legs failed to stand straight, a rush of pleasure enveloping them while no liquid came out of their shiny spheres, knowing well once their awarded sensation ended, they would be back at the peak of their infinite climax.
+	<p style="font-size: 12px;">can you tell i like rubber??</p>
+</pre>
+
+</html>
